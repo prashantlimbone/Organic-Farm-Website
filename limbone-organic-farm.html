@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limbone Organic Farm — Pure. Natural. Delivered.</title>
+<meta name="description" content="Farm-fresh organic eggs, cow milk, desi ghee, free-range chicken & dairy products. Chemical-free, naturally raised. Subscribe now.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#2E7D32;--gd:#1B5E20;--gm:#388E3C;--gl:#E8F5E9;--gc:#C8E6C9;--cream:#FFF8E1;--c2:#FFFDE7;--w:#fff;--tx:#1A2A1C;--tm:#5A6B5C;--bd:#E0EDE0;--r:12px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--tx);background:#fff;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--bd);}
+.nav-top{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px;height:70px;}
+.nav-search{display:flex;align-items:center;gap:8px;border:1px solid var(--bd);border-radius:6px;padding:8px 14px;background:#fafafa;width:220px;font-size:0.88rem;color:var(--tm);cursor:pointer;}
+.nav-logo{position:absolute;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:10px;}
+.nav-logo-icon{width:44px;height:44px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;line-height:1.1;color:var(--tx);}
+.nav-logo-sub{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--tm);}
+.nav-icons{display:flex;align-items:center;gap:18px;}
+.nav-icon-btn{background:none;border:none;cursor:pointer;font-size:1.25rem;position:relative;color:var(--tx);}
+.nav-cart-badge{position:absolute;top:-5px;right:-7px;background:var(--green);color:#fff;font-size:0.6rem;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.nav-bottom{border-top:1px solid var(--bd);background:#fff;}
+.nav-bottom-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:4px;height:46px;overflow-x:auto;}
+.nav-bottom a{font-size:0.83rem;font-weight:500;padding:6px 14px;border-radius:5px;color:var(--tm);white-space:nowrap;transition:color 0.15s;}
+.nav-bottom a:hover{color:var(--green);}
+.nav-bottom a.active{color:var(--green);font-weight:600;}
+.nav-highlight{background:var(--green) !important;color:#fff !important;border-radius:5px;padding:6px 16px;font-weight:600 !important;}
+.nav-highlight:hover{background:var(--gd) !important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:var(--tx);border-radius:2px;}
+
+/* HERO */
+.hero{background:linear-gradient(170deg,#1B5E20 0%,#2E7D32 50%,#43A047 100%);min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 0;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(129,199,132,0.2),transparent 60%);}
+.hero-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);padding:7px 16px;border-radius:99px;font-size:0.78rem;font-weight:500;color:#fff;margin-bottom:22px;}
+.hero-dot{width:7px;height:7px;background:#69F0AE;border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;line-height:1.12;margin-bottom:18px;}
+.hero h1 em{font-style:italic;color:#A5D6A7;}
+.hero-sub{color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:460px;margin-bottom:32px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:99px;font-size:0.92rem;font-weight:600;border:none;cursor:pointer;transition:all 0.22s ease;font-family:'DM Sans',sans-serif;}
+.btn:hover{transform:translateY(-2px);}
+.btn-white{background:#fff;color:var(--green);box-shadow:0 4px 18px rgba(0,0,0,0.15);}
+.btn-white:hover{background:var(--cream);}
+.btn-ghost{background:rgba(255,255,255,0.12);color:#fff;border:1.5px solid rgba(255,255,255,0.35);}
+.btn-ghost:hover{background:rgba(255,255,255,0.22);}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 4px 16px rgba(46,125,50,0.3);}
+.btn-green:hover{background:var(--gd);}
+.hero-stats{display:flex;gap:36px;margin-top:44px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.18);}
+.hero-stat-val{font-family:'Playfair Display',serif;font-size:1.9rem;color:#fff;font-weight:700;}
+.hero-stat-lbl{font-size:0.75rem;color:rgba(255,255,255,0.6);}
+.hero-cards{position:relative;}
+.hero-main-card{background:#fff;border-radius:20px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,0.22);max-width:300px;margin-left:auto;}
+.hero-card-scene{border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;margin-bottom:14px;position:relative;overflow:hidden;}
+.scene-milk{background:linear-gradient(145deg,#E3F2FD,#B3E5FC);}
+.hero-card-label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);background:var(--gl);padding:3px 10px;border-radius:99px;display:inline-block;margin-bottom:6px;}
+.hero-card-name{font-weight:700;font-size:1rem;margin-bottom:2px;}
+.hero-card-sub{font-size:0.76rem;color:var(--tm);margin-bottom:10px;}
+.hero-card-row{display:flex;align-items:center;justify-content:space-between;}
+.hero-card-price{font-size:1.25rem;font-weight:700;color:var(--green);}
+.hero-card-price span{font-size:0.78rem;font-weight:400;color:var(--tm);}
+.hero-add-btn{background:var(--green);color:#fff;border:none;padding:9px 18px;border-radius:8px;font-weight:600;font-size:0.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+.hero-add-btn:hover{background:var(--gd);}
+.hero-float{position:absolute;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 6px 24px rgba(0,0,0,0.14);display:flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:600;animation:floatY 4s ease-in-out infinite;white-space:nowrap;}
+.hero-float-1{bottom:16px;left:-24px;animation-delay:0s;}
+.hero-float-2{top:24px;right:-16px;animation-delay:2s;}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+/* TRUST BAR */
+.trust-bar{background:var(--cream);border-top:1px solid #F5E9B0;border-bottom:1px solid #F5E9B0;padding:16px 0;}
+.trust-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.83rem;font-weight:500;color:var(--tm);}
+
+/* SECTION HEADER — Two Brothers style */
+.section-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;}
+.section-hdr h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;color:var(--tx);}
+.shop-more-btn{background:var(--green);color:#fff;border:none;padding:11px 22px;border-radius:7px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;white-space:nowrap;}
+.shop-more-btn:hover{background:var(--gd);}
+
+/* PRODUCT SECTION */
+.products-section{padding:56px 0;background:#fff;}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+
+/* PRODUCT CARD — Two Brothers style */
+.pc{border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;background:#fff;transition:box-shadow 0.25s,transform 0.25s;position:relative;}
+.pc:hover{box-shadow:0 8px 32px rgba(46,125,50,0.13);transform:translateY(-4px);}
+.pc-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;position:relative;overflow:hidden;}
+
+/* Illustrated scene backgrounds */
+.s-milk{background:linear-gradient(160deg,#E3F2FD 0%,#90CAF9 60%,#42A5F5 100%);}
+.s-eggs{background:linear-gradient(160deg,#FFF9C4 0%,#F9E47A 60%,#EDD95A 100%);}
+.s-ghee{background:linear-gradient(160deg,#FFF8E1 0%,#FFE082 60%,#FFC107 100%);}
+.s-chicken{background:linear-gradient(160deg,#F3E5F5 0%,#CE93D8 60%,#BA68C8 100%);}
+.s-paneer{background:linear-gradient(160deg,#FFF3E0 0%,#FFCC80 60%,#FFA726 100%);}
+.s-dahi{background:linear-gradient(160deg,#E8EAF6 0%,#9FA8DA 60%,#7986CB 100%);}
+.s-butter{background:linear-gradient(160deg,#FFFDE7 0%,#FFF59D 60%,#F9E835 100%);}
+.s-season{background:linear-gradient(160deg,var(--gl) 0%,var(--gc) 100%);}
+
+/* Scene hills overlay */
+.pc-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:rgba(255,255,255,0.2);clip-path:ellipse(70% 100% at 50% 100%);}
+
+.pc-badge{position:absolute;top:10px;left:10px;z-index:2;font-size:0.68rem;font-weight:700;letter-spacing:0.04em;padding:4px 10px;border-radius:4px;display:flex;align-items:center;gap:4px;}
+.b-new{background:#1B5E20;color:#fff;}
+.b-trend{background:#E65100;color:#fff;}
+.b-best{background:#1565C0;color:#fff;}
+.b-org{background:var(--green);color:#fff;}
+.pc-wish{position:absolute;top:10px;right:10px;z-index:2;width:30px;height:30px;background:rgba(255,255,255,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.9rem;cursor:pointer;border:none;transition:background 0.2s;}
+.pc-wish:hover{background:#fff;}
+.pc-wish.liked{color:#E53935;}
+
+.pc-body{padding:14px 16px 16px;}
+.pc-name-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:3px;}
+.pc-name{font-weight:700;font-size:0.97rem;color:var(--tx);flex:1;line-height:1.3;}
+.pc-price{font-weight:700;font-size:1rem;color:var(--tx);white-space:nowrap;}
+.pc-desc{font-size:0.78rem;color:var(--tm);margin-bottom:8px;line-height:1.5;}
+.pc-stars{display:flex;align-items:center;gap:5px;margin-bottom:12px;}
+.stars-v{color:#F9A825;font-size:0.82rem;letter-spacing:1px;}
+.stars-c{font-size:0.75rem;color:var(--tm);}
+.pc-actions{display:flex;align-items:center;gap:8px;}
+.pc-qty{flex:1;border:1px solid var(--bd);border-radius:6px;padding:9px 28px 9px 10px;font-size:0.82rem;font-family:'DM Sans',sans-serif;color:var(--tx);background:#fff;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235A6B5C'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+.pc-add{background:var(--green);color:#fff;border:none;border-radius:6px;padding:9px 0;width:38px;flex-shrink:0;font-size:1.1rem;cursor:pointer;transition:background 0.2s;display:flex;align-items:center;justify-content:center;}
+.pc-add:hover{background:var(--gd);}
+
+/* HOW IT WORKS */
+.how-section{padding:56px 0;background:var(--gl);}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:36px;}
+.steps-grid::before{content:'';position:absolute;top:26px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--green) 0,var(--green) 10px,transparent 10px,transparent 20px);}
+.step{text-align:center;padding:14px;position:relative;z-index:1;}
+.step-num{width:52px;height:52px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin:0 auto 14px;border:4px solid #fff;box-shadow:0 4px 16px rgba(46,125,50,0.25);}
+.step h3{font-size:0.95rem;font-weight:600;margin-bottom:5px;}
+.step p{font-size:0.8rem;color:var(--tm);}
+
+/* ABOUT */
+.about-section{padding:56px 0;background:var(--cream);}
+.about-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.about-img{background:linear-gradient(135deg,var(--gd),var(--gm));border-radius:18px;height:400px;display:flex;align-items:center;justify-content:center;font-size:6.5rem;position:relative;overflow:hidden;}
+.about-img::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,94,32,0.4),transparent);}
+.slabel{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);background:var(--gl);padding:4px 13px;border-radius:99px;margin-bottom:14px;}
+.about-content h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;margin-bottom:14px;line-height:1.2;}
+.about-content p{font-size:0.92rem;color:var(--tm);margin-bottom:10px;}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.pillar{background:#fff;border:1px solid var(--bd);border-radius:10px;padding:14px;}
+.pillar-icon{font-size:1.4rem;margin-bottom:6px;}
+.pillar h4{font-size:0.86rem;font-weight:600;margin-bottom:3px;}
+.pillar p{font-size:0.78rem;color:var(--tm);}
+
+/* SUBSCRIBE */
+.sub-section{padding:56px 0;background:#0F1F11;}
+.sub-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+.sub-header{text-align:center;margin-bottom:36px;}
+.sub-header .slabel{background:rgba(165,214,167,0.12);color:#A5D6A7;}
+.sub-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;font-weight:800;}
+.sub-header p{color:rgba(255,255,255,0.5);margin-top:8px;font-size:0.9rem;}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.plan{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:28px;position:relative;transition:background 0.2s;}
+.plan:hover{background:rgba(255,255,255,0.08);}
+.plan-pop{background:var(--green);border-color:var(--green);}
+.pop-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--cream);color:var(--gd);font-size:0.68rem;font-weight:700;padding:3px 14px;border-radius:99px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;}
+.plan-tier{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:6px;}
+.plan-price{font-family:'Playfair Display',serif;font-size:2.6rem;color:#fff;font-weight:700;line-height:1;}
+.plan-period{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-bottom:18px;}
+.plan-div{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:16px 0;}
+.plan ul{list-style:none;}
+.plan li{font-size:0.85rem;color:rgba(255,255,255,0.75);padding:6px 0;display:flex;gap:9px;align-items:flex-start;}
+.plan li::before{content:'check';font-family:none;color:#69F0AE;font-weight:700;flex-shrink:0;}
+.plan-btn{width:100%;margin-top:22px;padding:12px;border-radius:99px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.88rem;border:none;transition:all 0.2s;}
+.plan-pop .plan-btn{background:#fff;color:var(--green);}
+.plan:not(.plan-pop) .plan-btn{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.18);}
+.plan:not(.plan-pop) .plan-btn:hover{background:rgba(255,255,255,0.18);}
+
+/* REVIEWS */
+.reviews-section{padding:56px 0;background:var(--gl);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.review{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:22px;}
+.rev-stars{color:#FFA000;font-size:0.88rem;letter-spacing:2px;margin-bottom:12px;}
+.review p{font-size:0.88rem;color:var(--tx);line-height:1.7;font-style:italic;margin-bottom:18px;}
+.rev-author{display:flex;align-items:center;gap:10px;}
+.rev-avatar{width:40px;height:40px;border-radius:50%;background:var(--gl);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.rev-name{font-weight:600;font-size:0.86rem;}
+.rev-loc{font-size:0.73rem;color:var(--tm);}
+
+/* FAQ */
+.faq-section{padding:56px 0;background:#fff;}
+.faq-wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+.faq-item{border-bottom:1px solid var(--bd);}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 0;font-size:0.96rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--tx);font-family:'DM Sans',sans-serif;gap:16px;}
+.faq-arrow{font-size:1.1rem;color:var(--green);transition:transform 0.3s;flex-shrink:0;}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height 0.35s ease;}
+.faq-ans p{padding-bottom:16px;font-size:0.88rem;color:var(--tm);}
+.faq-item.open .faq-arrow{transform:rotate(45deg);}
+.faq-item.open .faq-ans{max-height:180px;}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--gd),var(--gm));padding:56px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;font-size:10rem;opacity:0.07;top:50%;left:-3%;transform:translateY(-50%);}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:#fff;font-weight:800;margin-bottom:10px;}
+.cta-section p{color:rgba(255,255,255,0.7);margin-bottom:28px;}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:#0A1A0C;color:rgba(255,255,255,0.65);padding:52px 0 24px;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:36px;margin-bottom:40px;}
+.footer-brand p{font-size:0.83rem;line-height:1.7;margin:12px 0 18px;color:rgba(255,255,255,0.5);}
+.footer-col h4{color:#fff;font-size:0.86rem;font-weight:600;margin-bottom:14px;}
+.footer-col ul{list-style:none;}
+.footer-col li{padding:4px 0;}
+.footer-col a{font-size:0.82rem;color:rgba(255,255,255,0.5);transition:color 0.2s;}
+.footer-col a:hover{color:#A5D6A7;}
+.ci{display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;font-size:0.82rem;color:rgba(255,255,255,0.5);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{font-size:0.78rem;}
+.footer-links a{font-size:0.78rem;color:rgba(255,255,255,0.35);margin-left:16px;}
+
+/* WhatsApp */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 18px rgba(37,211,102,0.4);cursor:pointer;transition:transform 0.2s;}
+.wa-float:hover{transform:scale(1.1);}
+
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(255,255,255,0.98);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.3rem;font-weight:600;color:var(--tx);}
+.mobile-close{position:absolute;top:18px;right:22px;font-size:1.7rem;cursor:pointer;background:none;border:none;color:var(--tx);}
+
+/* Fade in */
+.fi{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.fi.visible{opacity:1;transform:none;}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .products-grid{grid-template-columns:repeat(2,1fr);}
+  .plans{grid-template-columns:1fr;}
+  .reviews-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-cards{display:none;}
+  .about-inner{grid-template-columns:1fr;}
+  .about-img{display:none;}
+  .steps-grid{grid-template-columns:1fr 1fr;}
+  .steps-grid::before{display:none;}
+}
+@media(max-width:640px){
+  .products-grid{grid-template-columns:1fr 1fr;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .trust-inner{gap:16px;}
+  .pillars{grid-template-columns:1fr 1fr;}
+  .nav-search{display:none;}
+  .hamburger{display:flex;}
+  .nav-bottom{display:none;}
+}
+@media(max-width:400px){.products-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">
+    <div class="nav-search">🔍 Search products…</div>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">🌿</div>
+      <div>
+        <div class="nav-logo-text">Limbone</div>
+        <div class="nav-logo-sub">Organic Farm</div>
+      </div>
+    </div>
+    <div class="nav-icons">
+      <button class="nav-icon-btn">👤</button>
+      <button class="nav-icon-btn">♡</button>
+      <button class="nav-icon-btn" style="position:relative;">🛒<span class="nav-cart-badge" id="cartCount">0</span></button>
+      <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-bottom">
+    <div class="nav-bottom-inner">
+      <a href="#products" class="active">🥛 MILK</a>
+      <a href="#products">🥚 EGGS</a>
+      <a href="#products">Shop by Category ▾</a>
+      <a href="#subscribe" class="nav-highlight">Join Monthly Plan</a>
+      <a href="#products">Shop by Benefit ▾</a>
+      <a href="#about">Farm Life 🌱</a>
+      <a href="#testimonials">Reviews ▾</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#products" onclick="toggleMenu()">Products</a>
+  <a href="#about" onclick="toggleMenu()">Our Farm</a>
+  <a href="#subscribe" onclick="toggleMenu()">Subscribe</a>
+  <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#subscribe" class="btn btn-green" onclick="toggleMenu()">Shop Now →</a>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag"><span class="hero-dot"></span>Delivering fresh across Maharashtra</div>
+      <h1>Farm-Fresh, <em>Pure,</em><br>At Your Door</h1>
+      <p class="hero-sub">Chemical-free organic milk, eggs, desi ghee & free-range chicken — harvested at dawn, delivered before breakfast.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-white">Explore Products →</a>
+        <a href="#subscribe" class="btn btn-ghost">Monthly Plans</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-val">500+</div><div class="hero-stat-lbl">Happy Families</div></div>
+        <div><div class="hero-stat-val">100%</div><div class="hero-stat-lbl">Chemical-Free</div></div>
+        <div><div class="hero-stat-val">4.9★</div><div class="hero-stat-lbl">Customer Rating</div></div>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-main-card">
+        <div class="hero-card-scene scene-milk">🥛</div>
+        <div class="hero-card-label">DAILY FRESH</div>
+        <div class="hero-card-name">A2 Fresh Cow Milk</div>
+        <div class="hero-card-sub">Collected every morning · Naturally rich</div>
+        <div class="hero-card-row">
+          <div class="hero-card-price">₹80 <span>/ litre</span></div>
+          <button class="hero-add-btn" onclick="addToCart(this)">Add +</button>
+        </div>
+      </div>
+      <div class="hero-float hero-float-1">🐔 Free-range, zero steroids</div>
+      <div class="hero-float hero-float-2">🥚 Laid today, at your door</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">🌱 100% Organic & Natural</div>
+    <div class="trust-item">🚚 Free Home Delivery</div>
+    <div class="trust-item">🧪 Zero Chemicals or Hormones</div>
+    <div class="trust-item">🔄 Pause Anytime</div>
+    <div class="trust-item">🐄 Humanely Raised Animals</div>
+  </div>
+</div>
+
+<section class="products-section" id="products">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div class="section-hdr fi">
+      <h2>Most Loved</h2>
+      <button class="shop-more-btn">Shop More</button>
+    </div>
+    <div class="products-grid fi">
+
+      <div class="pc">
+        <div class="pc-img s-milk">🥛
+          <div class="pc-badge b-best">⭐ Best Seller</div>
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">A2 Fresh Cow Milk</div><div class="pc-price">₹80</div></div>
+          <div class="pc-desc">Full-fat · Collected at dawn · No powder added</div>
+          <div class="pc-stars"><span class="stars-v">★★★★★</span><span class="stars-c">4.9 | 312 Reviews</span></div>
+          <div class="pc-actions">
+            <select class="pc-qty"><option>1 Litre</option><option>2 Litres</option><option>5 Litres</option></select>
+            <button class="pc-add" onclick="addToCart(this)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-img s-eggs">🥚
+          <div class="pc-badge b-trend">🔥 Trending</div>
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">Free-Range Organic Eggs</div><div class="pc-price">₹120</div></div>
+          <div class="pc-desc">Deep-orange yolks · Hens roam freely · No cages</div>
+          <div class="pc-stars"><span class="stars-v">★★★★★</span><span class="stars-c">4.8 | 876 Reviews</span></div>
+          <div class="pc-actions">
+            <select class="pc-qty"><option>6 Eggs</option><option>12 Eggs</option><option>30 Eggs</option></select>
+            <button class="pc-add" onclick="addToCart(this)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-img s-ghee">🍯
+          <div class="pc-badge b-best">⭐ Best Seller</div>
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">Pure Desi Ghee</div><div class="pc-price">₹850</div></div>
+          <div class="pc-desc">Bilona method · A2 milk · Golden & aromatic</div>
+          <div class="pc-stars"><span class="stars-v">★★★★★</span><span class="stars-c">4.9 | 2,104 Reviews</span></div>
+          <div class="pc-actions">
+            <select class="pc-qty"><option>250g (Glass Jar)</option><option>500g (Glass Jar)</option><option>1kg (Glass Jar)</option></select>
+            <button class="pc-add" onclick="addToCart(this)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-img s-chicken">🍗
+          <div class="pc-badge b-new">✦ New</div>
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">Free-Range Organic Chicken</div><div class="pc-price">₹380</div></div>
+          <div class="pc-desc">Country breed · Open pasture · Steroid-free</div>
+          <div class="pc-stars"><span class="stars-v">★★★★★</span><span class="stars-c">4.7 | 541 Reviews</span></div>
+          <div class="pc-actions">
+            <select class="pc-qty"><option>500g Curry Cut</option><option>1kg Curry Cut</option><option>1kg Whole</option></select>
+            <button class="pc-add" onclick="addToCart(this)">+</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-hdr fi" style="margin-top:48px;">
+      <h2>Fresh Dairy Daily</h2>
+      <button class="shop-more-btn">Shop More</button>
+    </div>
+    <div class="products-grid fi">
+
+      <div class="pc">
+        <div class="pc-img s-paneer">🧀
+          <div class="pc-badge b-org">🌿 Organic</div>
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">Fresh Paneer</div><div class="pc-price">₹200</div></div>
+          <div class="pc-desc">Handmade daily · Full-cream A2 milk · No additives</div>
+          <div class="pc-stars"><span class="stars-v">★★★★★</span><span class="stars-c">4.8 | 388 Reviews</span></div>
+          <div class="pc-actions">
+            <select class="pc-qty"><option>200g</option><option>400g</option><option>1kg</option></select>
+            <button class="pc-add" onclick="addToCart(this)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-img s-dahi">🥣
+          <div class="pc-badge b-trend">🔥 Trending</div>
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">Dahi (Set Curd)</div><div class="pc-price">₹60</div></div>
+          <div class="pc-desc">Set in earthen pot · Live cultures · Probiotic-rich</div>
+          <div class="pc-stars"><span class="stars-v">★★★★☆</span><span class="stars-c">4.6 | 723 Reviews</span></div>
+          <div class="pc-actions">
+            <select class="pc-qty"><option>400g</option><option>800g</option><option>1.5kg</option></select>
+            <button class="pc-add" onclick="addToCart(this)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-img s-butter">🧈
+          <div class="pc-badge b-org">🌿 Organic</div>
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">White Butter</div><div class="pc-price">₹180</div></div>
+          <div class="pc-desc">Morning-churned · Unsalted · No preservatives</div>
+          <div class="pc-stars"><span class="stars-v">★★★★★</span><span class="stars-c">4.9 | 214 Reviews</span></div>
+          <div class="pc-actions">
+            <select class="pc-qty"><option>100g</option><option>200g</option><option>500g</option></select>
+            <button class="pc-add" onclick="addToCart(this)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-img s-season">🌾
+          <button class="pc-wish" onclick="wish(this)">♡</button>
+        </div>
+        <div class="pc-body">
+          <div class="pc-name-row"><div class="pc-name">Seasonal Specials</div><div class="pc-price">Varies</div></div>
+          <div class="pc-desc">Buttermilk, Khoa, Honey & more — ask what's fresh today</div>
+          <div class="pc-stars"><span class="stars-v">★★★★★</span><span class="stars-c">Limited batches</span></div>
+          <div class="pc-actions">
+            <a href="https://wa.me/919999999999" style="flex:1;background:var(--green);color:#fff;border:none;border-radius:6px;padding:9px 12px;font-weight:600;font-size:0.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:5px;">💬 Ask on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="how-section" id="how">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;" class="fi">
+      <div class="slabel" style="background:#fff;">How It Works</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;margin-top:10px;">Fresh Food, Zero Effort</h2>
+    </div>
+    <div class="steps-grid fi">
+      <div class="step"><div class="step-num">1</div><h3>Choose Products</h3><p>Browse our seasonal catalogue and pick what your family needs</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Set a Schedule</h3><p>Daily, alternate-day, or weekly — you decide</p></div>
+      <div class="step"><div class="step-num">3</div><h3>We Harvest Fresh</h3><p>Collected at dawn and packed the same morning</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Doorstep Delivery</h3><p>Before 8 AM in eco-friendly packaging</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-inner fi">
+    <div class="about-img">🌾</div>
+    <div class="about-content">
+      <div class="slabel">Our Story</div>
+      <h2>Grown with Respect for Animals, Soil & People</h2>
+      <p>Limbone Organic Farm was born from a simple belief: every family deserves food as nature made it. No shortcuts, no chemicals, no compromise.</p>
+      <p>Our animals graze freely, drink clean water, and live the way they should. Products travel from farm to door — not from a cold store.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-icon">🐄</div><h4>Animal Welfare</h4><p>Free-range, naturally fed</p></div>
+        <div class="pillar"><div class="pillar-icon">🌍</div><h4>Sustainability</h4><p>Zero synthetic inputs</p></div>
+        <div class="pillar"><div class="pillar-icon">👨‍👩‍👧</div><h4>Family First</h4><p>Purity for growing children</p></div>
+        <div class="pillar"><div class="pillar-icon">🤝</div><h4>Transparency</h4><p>Visit our farm anytime</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sub-section" id="subscribe">
+  <div class="sub-inner">
+    <div class="sub-header fi">
+      <div class="slabel">Subscription Plans</div>
+      <h2>Save More, Eat Better Every Month</h2>
+      <p>Lock in freshness and save up to 20%. Cancel anytime, no lock-in.</p>
+    </div>
+    <div class="plans fi">
+      <div class="plan">
+        <div class="plan-tier">Starter</div>
+        <div class="plan-price">₹799</div>
+        <div class="plan-period">/month · Single product daily</div>
+        <hr class="plan-div">
+        <ul>
+          <li>1L A2 Milk daily or 6 eggs daily</li>
+          <li>Free home delivery</li>
+          <li>Flexible delivery days</li>
+          <li>WhatsApp order updates</li>
+          <li>Pause anytime</li>
+        </ul>
+        <button class="plan-btn" onclick="waOrder('Starter Plan Rs799/month')">Get Started</button>
+      </div>
+      <div class="plan plan-pop">
+        <div class="pop-tag">MOST POPULAR</div>
+        <div class="plan-tier" style="color:rgba(255,255,255,0.85);">Family</div>
+        <div class="plan-price">₹1,999</div>
+        <div class="plan-period">/month · Complete family basket</div>
+        <hr class="plan-div">
+        <ul>
+          <li>2L A2 Milk + 12 eggs/week</li>
+          <li>500g Dahi every week</li>
+          <li>200g Butter every 2 weeks</li>
+          <li>Priority morning delivery</li>
+          <li>10% off all add-ons</li>
+          <li>Monthly farm newsletter</li>
+        </ul>
+        <button class="plan-btn" onclick="waOrder('Family Plan Rs1999/month')">Choose Family Plan</button>
+      </div>
+      <div class="plan">
+        <div class="plan-tier">Premium</div>
+        <div class="plan-price">₹3,499</div>
+        <div class="plan-period">/month · Complete farm basket</div>
+        <hr class="plan-div">
+        <ul>
+          <li>Everything in Family plan</li>
+          <li>500g Desi Ghee / month</li>
+          <li>1kg Organic Chicken / month</li>
+          <li>250g Fresh Paneer weekly</li>
+          <li>20% off all add-ons</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <button class="plan-btn" onclick="waOrder('Premium Plan Rs3499/month')">Go Premium</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section" id="testimonials">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div class="section-hdr fi">
+      <h2>What Families Say</h2>
+      <button class="shop-more-btn">All Reviews</button>
+    </div>
+    <div class="reviews-grid fi">
+      <div class="review"><div class="rev-stars">★★★★★</div><p>"The A2 milk is a game-changer. My kids actually ask for more milk now! The dahi is thick and perfect — exactly like my mother used to make."</p><div class="rev-author"><div class="rev-avatar">👩</div><div><div class="rev-name">Priya Kulkarni</div><div class="rev-loc">Pune · Family Plan subscriber</div></div></div></div>
+      <div class="review"><div class="rev-stars">★★★★★</div><p>"As someone who trains daily, the protein quality from these eggs and chicken is noticeably better. Yolks are deep orange — you can see the nutrition."</p><div class="rev-author"><div class="rev-avatar">👨</div><div><div class="rev-name">Rahul Deshmukh</div><div class="rev-loc">Solapur · Premium subscriber</div></div></div></div>
+      <div class="review"><div class="rev-stars">★★★★★</div><p>"The desi ghee fills the whole kitchen with aroma. My elders said it tastes like real ghee from their childhood. Worth every rupee."</p><div class="rev-author"><div class="rev-avatar">👩‍🦱</div><div><div class="rev-name">Sunita Jadhav</div><div class="rev-loc">Akola · 8 months subscriber</div></div></div></div>
+      <div class="review"><div class="rev-stars">★★★★★</div><p>"We use Limbone chicken at our cafe. Customers always ask what makes our dishes taste different. Freshness you cannot get from a supermarket."</p><div class="rev-author"><div class="rev-avatar">👨‍🍳</div><div><div class="rev-name">Chef Arun Patil</div><div class="rev-loc">Satara · Restaurant partner</div></div></div></div>
+      <div class="review"><div class="rev-stars">★★★★★</div><p>"Delivery before 7:30 AM, never missed once in 6 months. WhatsApp updates are helpful and the team is incredibly responsive."</p><div class="rev-author"><div class="rev-avatar">👨‍💼</div><div><div class="rev-name">Vikram Shinde</div><div class="rev-loc">Nagpur · Starter plan</div></div></div></div>
+      <div class="review"><div class="rev-stars">★★★★★</div><p>"My daughter had an allergy to market milk but drinks Limbone A2 milk with zero issues. The quality difference is very real and very visible."</p><div class="rev-author"><div class="rev-avatar">👩‍👧</div><div><div class="rev-name">Meera Nair</div><div class="rev-loc">Nashik · Family plan</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="faq-wrap">
+    <div style="text-align:center;margin-bottom:36px;" class="fi">
+      <div class="slabel">FAQ</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-top:10px;">Questions We Get Asked</h2>
+    </div>
+    <div class="fi">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What makes your products organic and chemical-free? <span class="faq-arrow">+</span></button><div class="faq-ans"><p>Our animals are raised on natural pasture without antibiotics, growth hormones, or steroids. Our soil is enriched through composting — no synthetic pesticides or fertilizers.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What areas do you deliver to? <span class="faq-arrow">+</span></button><div class="faq-ans"><p>We deliver across Solapur, Pune, Nashik, Nagpur, Akola, and Satara. Message us on WhatsApp with your pincode to check availability.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What time does delivery happen? <span class="faq-arrow">+</span></button><div class="faq-ans"><p>We aim to deliver before 8 AM. Products are collected at dawn and dispatched immediately — no overnight cold-storage delays.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I pause or cancel my subscription? <span class="faq-arrow">+</span></button><div class="faq-ans"><p>Yes. Pause for travel, skip individual days, or cancel with 48 hours notice. No lock-in contracts or cancellation fees.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you supply to restaurants and cafes? <span class="faq-arrow">+</span></button><div class="faq-ans"><p>Yes! Bulk pricing available for volumes above 20L milk/week or 50 eggs/week. Contact us for a custom B2B quote.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div style="position:relative;z-index:1;">
+    <h2>Ready to Feed Your Family Better?</h2>
+    <p>Start your first delivery tomorrow. No commitment needed.</p>
+    <div class="cta-row">
+      <a href="#subscribe" class="btn btn-white">Start Subscription →</a>
+      <a href="https://wa.me/919999999999" class="btn btn-ghost">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:40px;height:40px;background:var(--green);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🌿</div>
+          <div><div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#fff;">Limbone</div><div style="font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Organic Farm</div></div>
+        </div>
+        <p>Pure, chemical-free farm products delivered to your door. Naturally raised. Honestly priced.</p>
+        <div style="display:flex;gap:10px;">
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,0.07);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.95rem;color:rgba(255,255,255,0.6);">📘</a>
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,0.07);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.95rem;color:rgba(255,255,255,0.6);">📸</a>
+          <a href="https://wa.me/919999999999" style="width:34px;height:34px;background:rgba(255,255,255,0.07);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.95rem;color:rgba(255,255,255,0.6);">💬</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul><li><a href="#">A2 Cow Milk</a></li><li><a href="#">Free-Range Eggs</a></li><li><a href="#">Pure Desi Ghee</a></li><li><a href="#">Organic Chicken</a></li><li><a href="#">Fresh Paneer</a></li><li><a href="#">Dahi & Butter</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#about">Our Story</a></li><li><a href="#how">How It Works</a></li><li><a href="#subscribe">Subscriptions</a></li><li><a href="#faq">FAQ</a></li><li><a href="#">Farm Visit</a></li><li><a href="#">B2B / Bulk Orders</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="ci">📞 <span>+91 99999 99999</span></div><div class="ci">📧 <span>hello@limbonefarm.in</span></div><div class="ci">📍 <span>Limbone, Akluj, Solapur Dist., MH 413101</span></div><div class="ci">🕐 <span>Orders till 9 PM for next-day delivery</span></div></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Limbone Organic Farm. All rights reserved.</p>
+      <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Refund Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919999999999?text=Hi!%20I'd%20like%20to%20order%20from%20Limbone%20Organic%20Farm" class="wa-float">💬</a>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item'),open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+function wish(btn){
+  btn.classList.toggle('liked');
+  btn.textContent=btn.classList.contains('liked')?'♥':'♡';
+}
+function addToCart(btn){
+  const orig=btn.textContent;
+  btn.textContent='✓';btn.style.background='#1B5E20';
+  setTimeout(()=>{btn.textContent=orig;btn.style.background='';},1800);
+  const b=document.getElementById('cartCount');
+  b.textContent=parseInt(b.textContent||0)+1;
+}
+function waOrder(plan){
+  window.open('https://wa.me/919999999999?text=Hi! I want to subscribe to the '+encodeURIComponent(plan)+' from Limbone Organic Farm','_blank');
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
